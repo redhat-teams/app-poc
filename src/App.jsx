@@ -22,7 +22,7 @@ export default function App() {
       <header className="app-header">
         <span className="app-mark">✦</span>
         <div>
-          <p className="app-title">Atelier du Faire-Part</p>
+          <p className="app-title">BUSINESS IT SOLUTIONS </p>
           <p className="app-subtitle">Simulateur de carte de mariage</p>
         </div>
       </header>
