@@ -58,3 +58,31 @@ textarea:focus-visible {
     transition-duration: 0.001ms !important;
   }
 }
+
+.seal-button {
+  cursor: pointer;
+  border: none;
+  background: var(--seal);
+  color: var(--seal-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.seal-button:hover {
+  transform: scale(1.06);
+}
+
+.seal-button:disabled {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.seal-icon.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
