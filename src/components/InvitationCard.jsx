@@ -1,0 +1,71 @@
+function initials(a, b) {
+  const first = (a || '?').trim().charAt(0).toUpperCase();
+  const second = (b || '?').trim().charAt(0).toUpperCase();
+  return `${first || '?'} ${second || '?'}`;
+}
+
+export default function InvitationCard({ data, palette }) {
+  const { name1, name2, date, city, venue, message } = data;
+
+  const style = {
+    '--paper': palette.paper,
+    '--paper-shadow': palette.paperShadow,
+    '--ink': palette.ink,
+    '--accent': palette.accent,
+    '--accent-soft': palette.accentSoft,
+    '--seal': palette.seal,
+    '--seal-text': palette.sealText,
+  };
+
+  return (
+    <div className="stage">
+      <div className="card-stack" style={style} aria-hidden="true">
+        <span className="stack-leaf stack-leaf-2" />
+        <span className="stack-leaf stack-leaf-1" />
+      </div>
+
+      <article className="card" style={style} role="img" aria-label={`Faire-part de mariage de ${name1 || 'Prénom 1'} et ${name2 || 'Prénom 2'}`}>
+        <div className="card-frame">
+          <svg className="ornament ornament-top" viewBox="0 0 240 40" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20 C 60 4, 90 4, 120 20 C 150 4, 180 4, 220 20" fill="none" stroke="var(--accent)" strokeWidth="1.2" />
+            <circle cx="120" cy="20" r="2.6" fill="var(--accent)" />
+            <circle cx="20" cy="20" r="1.8" fill="var(--accent-soft)" />
+            <circle cx="220" cy="20" r="1.8" fill="var(--accent-soft)" />
+          </svg>
+
+          <p className="eyebrow">Ils se disent&nbsp;oui</p>
+
+          <h1 className="names">
+            <span>{name1 || 'Prénom un'}</span>
+            <span className="amp">&amp;</span>
+            <span>{name2 || 'Prénom deux'}</span>
+          </h1>
+
+          <div className="rule" />
+
+          <p className="date">{date || 'Samedi 12 septembre 2026'}</p>
+          <p className="place">
+            {venue ? `${venue}` : 'Domaine des Tilleuls'}
+            {city ? ` — ${city}` : ' — Provence'}
+          </p>
+
+          <p className="message">
+            {message ||
+              "Vous êtes chaleureusement invités à célébrer notre union et à partager cette journée avec nous."}
+          </p>
+
+          <svg className="ornament ornament-bottom" viewBox="0 0 240 40" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20 C 60 36, 90 36, 120 20 C 150 36, 180 36, 220 20" fill="none" stroke="var(--accent)" strokeWidth="1.2" />
+            <circle cx="120" cy="20" r="2.6" fill="var(--accent)" />
+            <circle cx="20" cy="20" r="1.8" fill="var(--accent-soft)" />
+            <circle cx="220" cy="20" r="1.8" fill="var(--accent-soft)" />
+          </svg>
+        </div>
+
+        <div className="seal" title="Cachet de cire">
+          <span>{initials(name1, name2)}</span>
+        </div>
+      </article>
+    </div>
+  );
+}

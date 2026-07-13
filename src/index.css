@@ -1,0 +1,60 @@
+:root {
+  --wood-950: #1E1912;
+  --wood-900: #241D15;
+  --wood-800: #2E251A;
+  --wood-700: #3B2F20;
+  --brass: #B7924C;
+  --brass-soft: #8C734A;
+  --linen: #EFE7D8;
+  --linen-dim: #C9BEA6;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--wood-950);
+  color: var(--linen);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--wood-950);
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
