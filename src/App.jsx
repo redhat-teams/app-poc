@@ -23,7 +23,7 @@ export default function App() {
         <span className="app-mark">✦</span>
         <div>
           <p className="app-title">AIB SOLUTIONS Lab 🧪 + 💡</p>
-          <p className="app-subtitle">Simulateur de carte de mariage</p>
+          <p className="app-subtitle">Simulateur de carte de mariage ⚙️ </p>
         </div>
       </header>
 
